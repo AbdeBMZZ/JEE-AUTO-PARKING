@@ -124,7 +124,7 @@ public class Controller extends HttpServlet {
 	private void deleteCar(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-
+		
 		Car car = new Car(id);
 		carDAO.deleteCar(car);
 		response.sendRedirect("list");

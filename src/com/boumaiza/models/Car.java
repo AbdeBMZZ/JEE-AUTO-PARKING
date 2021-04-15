@@ -1,8 +1,5 @@
 package com.boumaiza.models;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class Car {
 	public int id;
 	public String matricule;
@@ -10,6 +7,7 @@ public class Car {
 	public String type;
 	public String dateE;
 	public long price;
+	
 	public Car() {
 		
 	}

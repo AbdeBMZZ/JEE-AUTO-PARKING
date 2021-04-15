@@ -1,19 +1,15 @@
 package com.boumaiza.dao;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import com.boumaiza.models.Car;
@@ -83,7 +79,6 @@ public class CarDAO {
 		    
 			Car car= new Car(id, matricule, owner, type, dateE);
 			car.setprice(getPrice(car));
-			System.out.println(car.getPrice());
 			listcar.add(car);
 			
 		}
@@ -183,8 +178,6 @@ public class CarDAO {
             difference_In_Seconds= (difference_In_Time / 1000) % 60;
             
             difference_In_Minutes= difference_In_Hours* 60 + (difference_In_Time/ (1000 * 60)) % 60;
-
-            System.out.println("total : " + difference_In_Minutes);
             
 		} catch (ParseException e) {
 			e.printStackTrace();

@@ -26,7 +26,7 @@
 		<servlet-class>com.boumaiza.controllers.Controller</servlet-class>
 	</servlet>
 
-	<servlet-mapping>
+	<servlet-mapping>	
 		<servlet-name>Controller</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>

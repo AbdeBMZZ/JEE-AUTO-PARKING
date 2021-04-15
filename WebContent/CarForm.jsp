@@ -16,7 +16,7 @@
 		</div>
 		<h2>
         	<a href="new"><button type="button" class="btn btn-secondary">Add New Car</button></a>
-        	<a href="list"><button type="button" class="btn btn-secondary">List All Cars</button></a>
+        	<a href="list"><button type="button" class="btn btn-secondary">All Cars</button></a>
         	
         </h2>
 	</center>

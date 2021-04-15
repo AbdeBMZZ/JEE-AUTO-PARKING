@@ -3,10 +3,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-	<title>Books Store Application</title>
+	<title>Parking</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<style>
-
+		#myTable{
+			width:900px;
+			margin-top: 30px;
+		}
+		#aabb{
+		    margin: 30px;
+		}
 	</style>
 </head>
 <body>
@@ -17,14 +23,14 @@
 		</div>
         <h2>
         	<a href="new"><button type="button" class="btn btn-secondary">Add New Car</button></a>
-        	<a href="list"><button type="button" class="btn btn-secondary">List All Cars</button></a>
+        	<a href="list"><button type="button" class="btn btn-secondary">All Cars</button></a>
         	
         </h2>
 	</center>
     <div align="center">
-	<caption><h4>List of Cars</h4></caption>
+	<caption><h4>cars in the parking lot</h4></caption>
 	
-	<center>
+	<center id="aabb">
 		<div class="input-group rounded" style ="width:300px;">
 		  <input id="myInput" type="search" class="form-control rounded" onkeyup="myFunction()" placeholder="Search" aria-label="Search"
 		    aria-describedby="search-addon" />
@@ -70,8 +76,6 @@
 		</table>
     </div>
     
-
-    
 	<script>
 	
 		function myFunction() {
@@ -83,7 +87,7 @@
 		  tr = table.getElementsByTagName("tr");
 		  
 		  for (i = 0; i < tr.length; i++) {
-		    td = tr[i].getElementsByTagName("td")[3];
+		    td = tr[i].getElementsByTagName("td")[2	];
 		    if (td) {
 		      txtValue = td.textContent || td.innerText;
 		      if (txtValue.toUpperCase().indexOf(filter) > -1) {
