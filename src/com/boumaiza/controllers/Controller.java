@@ -2,6 +2,8 @@ package com.boumaiza.controllers;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -91,8 +93,13 @@ public class Controller extends HttpServlet {
 		String matricule = request.getParameter("matricule");
 		String owner = request.getParameter("owner");
 		String type = request.getParameter("type");
-
-		Car newCar = new Car(matricule, owner, type);
+		
+	    LocalDateTime myDateObj = LocalDateTime.now();
+	    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+	    String formattedDate = myDateObj.format(myFormatObj);
+	    String dateE = formattedDate;
+	    
+		Car newCar = new Car(matricule, owner, type, dateE);
 		carDAO.insertCar(newCar);
 		response.sendRedirect("list");
 	}
@@ -104,7 +111,12 @@ public class Controller extends HttpServlet {
 		String owner = request.getParameter("owner");
 		String type = request.getParameter("type");
 
-		Car car= new Car(id, matricule, owner, type);
+	    LocalDateTime myDateObj = LocalDateTime.now();
+	    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+	    String formattedDate = myDateObj.format(myFormatObj);
+	    String dateE = formattedDate;
+	    
+		Car car= new Car(id, matricule, owner, type, dateE);
 		carDAO.updateCar(car);
 		response.sendRedirect("list");
 	}

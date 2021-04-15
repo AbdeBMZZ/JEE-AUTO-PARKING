@@ -5,6 +5,9 @@
 <head>
 	<title>Books Store Application</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<style>
+
+	</style>
 </head>
 <body>
 
@@ -32,28 +35,33 @@
 	</center>
 	
 
-        <table id="myTable" class="table table-bordered">
+        <table id="myTable" class="table table-bordered ">
 		  <thead>
 		    <tr>
-		      <th scope="col">ID</th>
 		      <th scope="col">matricule</th>
 		      <th scope="col">Owner</th>
 		      <th scope="col">Type</th>
+		      <th scope="col">Date</th>
+			  <th scope="col">Price</th>
 			  <th scope="col">Actions</th>
+
 		    </tr>
 		  </thead>
 		  <tbody>
 		    <tr>
 		      <c:forEach var="car" items="${listCar}">
                 <tr>
-                    <td><c:out value="${car.id}" /></td>
                     <td><c:out value="${car.matricule}" /></td>
                     <td><c:out value="${car.owner}" /></td>
                     <td><c:out value="${car.type}" /></td>
+                    <td><c:out value="${car.dateE}" /></td>
+                    <td><c:out value="${car.price}" /> DH</td>
+
                     <td>
                     	<a href="edit?id=<c:out value='${car.id}' />"><button type="button" class="btn btn-primary">Edit</button></a>
                     	
-                    	<a href="delete?id=<c:out value='${car.id}' />"><button type="button" class="btn btn-danger">CheckOut</button></a>                    	
+                    	<a href="delete?id=<c:out value='${car.id}' />"><button  type="button" class="btn btn-danger">CheckOut</button></a>                    	
+
                     </td>
                 </tr>
             </c:forEach>
@@ -62,7 +70,10 @@
 		</table>
     </div>
     
+
+    
 	<script>
+	
 		function myFunction() {
 		  var input, filter, table, tr, td, i, txtValue;
 		  
